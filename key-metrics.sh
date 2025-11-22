@@ -10,6 +10,8 @@ ip route show       # Displays the routing table.
 systemctl list-units --type=service --state=running # Check all running services
 systemctl status <service_name>                     # Check specific service status
 
+ps -eo user,pid,cmd --sort=-rss | grep -E 'd$'  # lists processes and filters for those that often end in 'd' (daemon), which is a common naming convention for services (e.g., sshd, httpd, rsyslogd).
+
 ## Disk I/O and Space Utilization
 df -h               # Show Disk Free space in human-readable format. This checks for disks that are nearing full capacity.
 du -sh              # Disk Usage summary for the directories in the root filesystem.  This helps find where space is being consumed.
